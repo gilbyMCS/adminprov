@@ -67,6 +67,7 @@
                       alt="https://generated.photos/" />
                      proveedor
                     </a>
+                    <!-- perfin configurar -->
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                       <a class="dropdown-item" href="#">Mi perfil</a>
                       <a class="dropdown-item" href="#">Suscripciones</a>
