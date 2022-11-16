@@ -1,7 +1,5 @@
 <?php
-function conexion()
-{
-   return mysqli_connect('localhost','root','','goldenparties');
-   
-}
+
+$conexion=mysqli_connect("localhost","root","","goldenparties");
+
 ?>
