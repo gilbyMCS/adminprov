@@ -21,7 +21,7 @@ header("location:../view/proveedor/index.php");
 else{
     ?>
     <?php
-    include("../login.php");
+    include("../index.php");
     ?>
     <h1 class="bad">ERROR EN LA AUTENTIFICACION</h1>
     <?php

@@ -18,7 +18,7 @@
             <form action="controller/login.php" method="POST">
                 <!-- ARRIBA LA URL -->
                 <input type="text" class="form-control" id="usuario" class="fadeIn second" name="usuario"
-                    placeholder="Inserta tu Correo">
+                    placeholder="Usuario">
                 <p></p>
                 <input type="text" class="form-control" id="contraseña" class="fadeIn third" name="contraseña"
                     placeholder="Inserta tu Contraseña">
