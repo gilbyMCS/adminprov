@@ -1,5 +1,6 @@
 <?php
-
-$conexion=mysqli_connect("localhost","root","","goldenparties");
+function conexion(){
+    return mysqli_connect("localhost", "root", "", "goolpartie");
+}
 
 ?>

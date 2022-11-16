@@ -4,7 +4,7 @@
     <?php
   require_once 'lib/librerias.php';
   ?>
-    <link rel="stylesheet" href="../golden01/css/estilos.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
     <!-- <div class="wrapper fadeInDown"> LE QUITAMOS EL FADEINDOWN PARA QUE MUESTRE EL MODDAL -->
