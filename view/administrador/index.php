@@ -1,3 +1,11 @@
+
+<?php
+include 'conexion.php'
+$iduser = $_SESSION['usuario'];
+$sql 
+
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -77,15 +85,18 @@
             <!-- Fin Navbar -->
 
             <!-- Pagina contenido -->
+           
             <div id="content" class="bg-grey w-100">
                 <!-- funciones para traer datos de administrador  -->
                 <section class="bg-light py-3">
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-9 col-md-8">
-                                <h1 class="font-weight-bold mb-0" value="<?php echo $option['id'] ?>"><?php echo $option['nombre'] ?></h1>                              
+                                <h1 class="font-weight-bold mb-0" ></h1>    
+ <?php endforeach ?>
                                 <p class="lead text-muted">Revisa la última información</p>
                             </div>
+                           
                             <div class="col-lg-3 col-md-4 d-flex">
                                 <button class="btn btn-primary w-100 align-self-center">Descargar reporte</button>
                             </div>
