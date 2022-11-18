@@ -6,7 +6,8 @@ include ('conexion.php');
 session_start();
 $user= $_SESSION['usuario'];
 $conexion=conexion();
-$sql="SELECT id_login_rol , nombre, contra, rol_id FROM login_admin WHERE nombre= '$user' ";
+$sql="SELECT id_login_rol , nombre, contra, rol_id FROM login_admin INNER JOIN WHERE nombre= '$user' ";
+// $sql="SELECT id_login_rol , nombre, contra, rol_id FROM login_admin WHERE nombre= '$user' ";
 $resultado = mysqli_query($conexion, $sql);
 while($data=$resultado->fetch_assoc()){
     $id_login_rol = $data['id_login_rol'];
