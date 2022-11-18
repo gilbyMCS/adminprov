@@ -14,17 +14,13 @@ require_once '../assets/librerias.php';
         <?php require_once 'navBar.php'; ?>
         <!-- Fin Navbar -->
 
-        <!-- Page Content -->
-        <div id="content" class="bg-grey w-100">
+            <!-- Page Content -->
+            <div id="content" class="bg-grey w-100">
+                <section>
+                 
+                </section>
 
-            <section class="bg-light py-3">
-                <div class="container">
-                    <div class="row">
-                       
-                        
-                    </div>
-                </div>
-            </section>
+            </div>
 
         </div>
     </div>
