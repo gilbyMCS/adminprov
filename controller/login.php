@@ -1,8 +1,9 @@
 <?php
+session_start();
 require_once '../assets/conexion.php';
 $usuario=$_POST['usuario'];
 $contraseña=$_POST['contraseña'];
-session_start();
+
 $_SESSION['usuario']=$usuario;
 
 $conexion=conexion();
@@ -20,12 +21,9 @@ if($filas['rol_id']==2){ //cliente
 header("location:../view/proveedor/index.php");
 }
 else{
-    ?>
-    <?php
-    include("../index.php");
-    ?>
-    <h1 class="bad">ERROR EN LA AUTENTIFICACION</h1>
-    <?php
+    echo "<script>alert('error en la autenticacion.');
+        window.location = '../index.php';
+        </script>";  
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);

@@ -1,8 +1,11 @@
 
 <?php
-include 'conexion.php'
-$iduser = $_SESSION['usuario'];
-$sql 
+session_start();
+include ('conexion.php');
+$user= $_SESSION['usuario'];
+
+$conexion=conexion();
+$sql="SELECT id_login_rol , nombre, contra, rol_id FROM nombre = '".$user."'";
 
 
 ?>
@@ -92,8 +95,7 @@ $sql
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-9 col-md-8">
-                                <h1 class="font-weight-bold mb-0" ></h1>    
- <?php endforeach ?>
+                                <h1 class="font-weight-bold mb-0"><?php echo $nombre;?></h1>    
                                 <p class="lead text-muted">Revisa la última información</p>
                             </div>
                            
