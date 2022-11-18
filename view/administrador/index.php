@@ -1,12 +1,19 @@
 
 <?php
-session_start();
+//gracias a nuestra variable de session podemos mostrar datos del usuario independiente de los demas
+//sin mostrar otros que no pertenesca a usuario que ah iniciado sesion.
 include ('conexion.php');
+session_start();
 $user= $_SESSION['usuario'];
-
 $conexion=conexion();
-$sql="SELECT id_login_rol , nombre, contra, rol_id FROM nombre = '".$user."'";
-
+$sql="SELECT id_login_rol , nombre, contra, rol_id FROM login_admin WHERE nombre= '$user' ";
+$resultado = mysqli_query($conexion, $sql);
+while($data=$resultado->fetch_assoc()){
+    $id_login_rol = $data['id_login_rol'];
+    $nombre = $data['nombre'];
+    $contra = $data['contra'];
+    $rol_id = $data['rol_id'];
+}
 
 ?>
 <!doctype html>
@@ -95,7 +102,7 @@ $sql="SELECT id_login_rol , nombre, contra, rol_id FROM nombre = '".$user."'";
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-9 col-md-8">
-                                <h1 class="font-weight-bold mb-0"><?php echo $nombre;?></h1>    
+                                <h1 class="font-weight-bold mb-0">Bienvenido: <?php echo $nombre; ?></h1>    
                                 <p class="lead text-muted">Revisa la última información</p>
                             </div>
                            

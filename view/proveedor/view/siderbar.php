@@ -3,7 +3,7 @@
         <h4 class="text-light font-weight-bold mb-0">Golden</h4>
     </div>
     <div class="menu">
-        <a href="view/subirimagen.php" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
+        <a href="subirimagen.php" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
             Subir Imagen</a>
 
         <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
