@@ -16,7 +16,7 @@ if($filas['rol_id']==1){ //administrador
 
 }else
 if($filas['rol_id']==2){ //cliente
-header("location:../view/proveedor/index.php");
+header("location:../view/proveedor/view/index.php");
 }
 else{
     echo "<script>alert('Usuario no existente');

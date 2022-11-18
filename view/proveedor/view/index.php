@@ -2,15 +2,16 @@
 <html lang="en">
 
 <?php
-require_once 'assets/librerias.php';
+require_once '../assets/librerias.php';
 ?>
 
 <body>
     <div class="d-flex" id="content-wrapper">
 
         <!-- Sidebar -->
-        <?php require_once 'view/siderbar.php'; ?>
+        <?php require_once 'siderbar.php'; ?>
         <!-- Fin sidebar -->
+        <?php require_once 'navBar.php'; ?>
         <!-- Fin Navbar -->
 
         <!-- Page Content -->
@@ -24,7 +25,7 @@ require_once 'assets/librerias.php';
                             <p class="lead text-muted">Golden Parties</p>
                         </div>
                         <div class="col-lg-9 col-md-8">
-                            <img src="../../img/GoldenPartiesLOGO.jpg.png" class="card-img-top" alt="..." style="width: 30%;">
+                            <img src="../../../img/GoldenPartiesLOGO.jpg.png" class="card-img-top" alt="..." style="width: 30%;">
                         </div>
                     </div>
                 </div>
@@ -145,7 +146,7 @@ require_once 'assets/librerias.php';
 
     </div>
     </div>
-    <?php require_once 'assets/script.php';  ?>
+    <?php require_once '../assets/script.php';  ?>
 </body>
 
 </html>
