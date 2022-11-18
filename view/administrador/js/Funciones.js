@@ -5,7 +5,7 @@ $(document).ready(function (){
         $.ajax({
             type: "POST",
             data: datos,
-            url: "controller/loginController.php",
+            url: "controller/datosusuarios.php",
             success: function(r){
                 if (r == 1) {
                     $('#registro')[0].reset();

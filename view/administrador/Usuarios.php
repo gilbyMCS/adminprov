@@ -1,9 +1,9 @@
 <?php
-//gracias a nuestra variable de session podemos mostrar datos del usuario independiente de los demas
+//TODO: gracias a nuestra variable de session podemos mostrar datos del usuario independiente de los demas
 //sin mostrar otros que no pertenesca a usuario que ah iniciado sesion.
-include ('conexion.php');
+include ('assets/conexion.php');
 session_start();
-echo $user= $_SESSION['usuario'];
+ $user= $_SESSION['usuario'];
 $conexion=conexion();
 $sql="SELECT id_login_rol, nombre, contra, tipo, rol FROM login_admin INNER JOIN roles ON login_admin.tipo = roles.rol WHERE nombre ='$user'";
 // $sql="SELECT id_login_rol , nombre, contra, rol_id FROM login_admin WHERE nombre= '$user' ";
@@ -27,32 +27,25 @@ while($data=$resultado->fetch_assoc()){
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+  <!-- Default theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+  <!-- Semantic UI theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+  <!-- Bootstrap theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+    <!-- librerias jquery -->
+    
     <title>administrador</title>
 </head>
 
 <body>
     <div class="d-flex" id="content-wrapper">
-
         <!-- Sidebar -->
-        <div id="sidebar-container" class="bg-primary">
-            <div class="logo">
-                <h4 class="text-light font-weight-bold mb-0">Golden</h4>
-            </div>
-            <div class="menu">
-                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-apps lead mr-2"></i>
-                    Tablero</a>
-
-                <a href="" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
-                    Usuarios</a>
-
-                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-stats lead mr-2"></i>
-                    Estadísticas</a>
-                <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-person lead mr-2"></i>
-                    Perfil</a>
-                <a href="#" class="d-block text-light p-3 border-0"> <i class="icon ion-md-settings lead mr-2"></i>
-                    Configuración</a>
-            </div>
-        </div>
+        <?php include 'sidebar.php' ?>
         <!-- Fin sidebar -->
 
         <div class="w-100">
@@ -105,7 +98,7 @@ while($data=$resultado->fetch_assoc()){
                             <div class="col-lg-8 my-3">
                                 <div class="card rounded-0">
                                     <div class="container">
-                                        <form action="/action_page.php">
+                                        <form id="registro">
                                             <label for="nombre">Registro de nuevos usuarios </label>
                                             <div class="form-group">
                                                 <label>Nombre:</label>
@@ -126,12 +119,13 @@ while($data=$resultado->fetch_assoc()){
                                                 </select>
                                                 <div class="form-group">
                                                     <label>Tipo de cuenta:</label>
-                                                    <input type="text" class="form-control" placeholder="Contraseña"
-                                                        name="contra" id="contra">
+                                                    <input type="text" class="form-control" placeholder="tipo de cuenta"
+                                                        name="tipo" id="tipo">
                                                 </div>
                                             </div>
-                                            <button type="submit" class="btn btn-primary" data-toggle="tooltip"
-                                                title="Agregar Registro">Enviar</button>
+                                            <button type="button" id="btnagregar" class="btn btn-primary">actualizar :)</button>
+                                            <button type="button" class="btn btn-primary" data-toggle="tooltip"
+                                                title="Agregar Registro" id="" >Enviar</button>
                                             <button type="button" class="btn btn-primary" data-toggle="modal"
                                                 data-target="#myModal" data-toggle="tooltip"
                                                 title="Requisito opcional">Configuar</button>
@@ -153,7 +147,7 @@ while($data=$resultado->fetch_assoc()){
 
                                         <!-- Modal body -->
                                         <div class="modal-body">
-                                            <form>
+                                            <form >
                                                 <div class="row">
                                                     <div class="col">
                                                         <label for="rol">Rol</label>
@@ -251,47 +245,10 @@ while($data=$resultado->fetch_assoc()){
 
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"
-        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
-    <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Feb 2020', 'Mar 2020', 'Abr 2020', 'May 2020'],
-            datasets: [{
-                label: 'Nuevos usuarios',
-                data: [50, 100, 150, 200],
-                backgroundColor: [
-                    '#12C9E5',
-                    '#12C9E5',
-                    '#12C9E5',
-                    '#111B54'
-                ],
-                maxBarThickness: 30,
-                maxBarLength: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-    </script>
 </body>
 
 </html>
+<!-- funciones  -->
+<script
+    src ="js/Funciones.js">
+</script>

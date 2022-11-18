@@ -35,7 +35,7 @@ while($data=$resultado->fetch_assoc()){
     <div class="d-flex" id="content-wrapper">
 
         <!-- Sidebar -->
-        <?php include 'sidebar.php' ?>
+       <?php include 'sidebar.php' ?>
         <!-- Fin sidebar -->
 
         <div class="w-100">
