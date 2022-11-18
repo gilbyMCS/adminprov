@@ -1,12 +1,10 @@
 <?php
-session_start();
-require_once '../assets/conexion.php';
 $usuario=$_POST['usuario'];
 $contraseña=$_POST['contraseña'];
-
+session_start();
 $_SESSION['usuario']=$usuario;
 
-$conexion=conexion();
+$conexion=mysqli_connect("localhost","root","","goolpartie");
 
 $consulta="SELECT*FROM login_admin where nombre='$usuario' and contra='$contraseña'";
 $resultado=mysqli_query($conexion,$consulta);
@@ -21,9 +19,9 @@ if($filas['rol_id']==2){ //cliente
 header("location:../view/proveedor/index.php");
 }
 else{
-    echo "<script>alert('error en la autenticacion.');
-        window.location = '../index.php';
-        </script>";  
+    echo "<script>alert('Usuario no existente');
+            window.location = '../index.php';
+            </script>";
 }
 mysqli_free_result($resultado);
 mysqli_close($conexion);
