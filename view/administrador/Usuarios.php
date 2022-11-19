@@ -1,6 +1,5 @@
-
 <?php
-//gracias a nuestra variable de session podemos mostrar datos del usuario independiente de los demas
+//TODO: gracias a nuestra variable de session podemos mostrar datos del usuario independiente de los demas
 //sin mostrar otros que no pertenesca a usuario que ah iniciado sesion.
 include ('assets/conexion.php');
 session_start();
@@ -28,12 +27,23 @@ while($data=$resultado->fetch_assoc()){
     <link rel="stylesheet" href="assets/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Muli:300,700&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.js"integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+  <!-- CSS -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css" />
+  <!-- Default theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/default.min.css" />
+  <!-- Semantic UI theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/semantic.min.css" />
+  <!-- Bootstrap theme -->
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/themes/bootstrap.min.css" />
+    <!-- librerias jquery -->
+    
     <title>administrador</title>
 </head>
 
 <body>
     <div class="d-flex" id="content-wrapper">
-
         <!-- Sidebar -->
         <?php include 'sidebar.php' ?>
         <!-- Fin sidebar -->
@@ -49,7 +59,7 @@ while($data=$resultado->fetch_assoc()){
                         aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
-                     <!-- barra de busqueda -->
+                    <!-- barra de busqueda  -->
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <form class="form-inline position-relative d-inline-block my-2">
                             <input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar">
@@ -58,13 +68,12 @@ while($data=$resultado->fetch_assoc()){
                         </form>
                         <!-- fin de barra de busqueda -->
 
-
                         <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                             <li class="nav-item dropdown">
                                 <a class="nav-link text-dark dropdown-toggle" href="#" id="navbarDropdown" role="button"
                                     data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <img src="" class="img-fluid rounded-circle avatar mr-2"
-                                        alt="https://generated.photos/" />
+                                    <!-- imagen de usuario  -->
+                                    <img src="#" class="img-fluid rounded-circle avatar mr-2" alt="insertar imagen" />
                                     <?php echo $rol_id;?>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
@@ -81,77 +90,85 @@ while($data=$resultado->fetch_assoc()){
             <!-- Fin Navbar -->
 
             <!-- Pagina contenido -->
-           
+
             <div id="content" class="bg-grey w-100">
-                <!-- funciones para traer datos de administrador  -->
-                <section class="bg-light py-3">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-lg-9 col-md-8">
-                                <h1 class="font-weight-bold mb-0">Bienvenido: <?php echo $nombre; ?></h1>    
-                                <p class="lead text-muted">Revisa la última información</p>
-                            </div>
-                           
-                            <div class="col-lg-3 col-md-4 d-flex">
-                                <button class="btn btn-primary w-100 align-self-center">Descargar reporte</button>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-                <section class="bg-mix py-3">
-                    <div class="container">
-                        <div class="card rounded-0">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
-                                        <div class="mx-auto">
-                                            <h6 class="text-muted">Ingresos mensuales</h6>
-                                            <h3 class="font-weight-bold">$50000</h3>
-                                            <h6 class="text-success"><i class="icon ion-md-arrow-dropup-circle"></i>
-                                                50.50%</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
-                                        <div class="mx-auto">
-                                            <h6 class="text-muted">Productos activos</h6>
-                                            <h3 class="font-weight-bold">100</h3>
-                                            <h6 class="text-success"><i class="icon ion-md-arrow-dropup-circle"></i>
-                                                25.50%</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6 d-flex stat my-3">
-                                        <div class="mx-auto">
-                                            <h6 class="text-muted">No. de usuarios</h6>
-                                            <h3 class="font-weight-bold">2500</h3>
-                                            <h6 class="text-success"><i class="icon ion-md-arrow-dropup-circle"></i>
-                                                75.50%</h6>
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-3 col-md-6 d-flex my-3">
-                                        <div class="mx-auto">
-                                            <h6 class="text-muted">Usuarios nuevos</h6>
-                                            <h3 class="font-weight-bold">500</h3>
-                                            <h6 class="text-success"><i class="icon ion-md-arrow-dropup-circle"></i>
-                                                15.50%</h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
                 <section>
                     <div class="container">
                         <div class="row">
                             <div class="col-lg-8 my-3">
                                 <div class="card rounded-0">
-                                    <div class="card-header bg-light">
-                                        <h6 class="font-weight-bold mb-0">Número de usuarios de paga</h6>
+                                    <div class="container">
+                                        <form id="registro">
+                                            <label for="nombre">Registro de nuevos usuarios </label>
+                                            <div class="form-group">
+                                                <label>Nombre:</label>
+                                                <input type="text" class="form-control" placeholder="Nombre"
+                                                    name="nombre" id="nombre">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Contraseña:</label>
+                                                <input type="text" class="form-control" placeholder="Contraseña"
+                                                    name="contra" id="contra">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Tipo de rol:</label>
+                                                <select name="rol" id="rol" class="custom-select">
+                                                    <option selected>select</option>
+                                                    <option value="1">1-Administrador</option>
+                                                    <option value="2">2-Proveedor</option>
+                                                </select>
+                                                <div class="form-group">
+                                                    <label>Tipo de cuenta:</label>
+                                                    <input type="text" class="form-control" placeholder="tipo de cuenta"
+                                                        name="tipo" id="tipo">
+                                                </div>
+                                            </div>
+                                            <button type="button" id="btnagregar" class="btn btn-primary">actualizar :)</button>
+                                            <button type="button" class="btn btn-primary" data-toggle="tooltip"
+                                                title="Agregar Registro" id="" >Enviar</button>
+                                            <button type="button" class="btn btn-primary" data-toggle="modal"
+                                                data-target="#myModal" data-toggle="tooltip"
+                                                title="Requisito opcional">Configuar</button>
+                                        </form>
                                     </div>
-                                    <div class="card-body">
-                                        <canvas id="myChart" width="300" height="150"></canvas>
+                                </div>
+                            </div>
+
+                            <!-- The Modal -->
+                            <div class="modal" id="myModal">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Configuarion de usuario</h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            <form >
+                                                <div class="row">
+                                                    <div class="col">
+                                                        <label for="rol">Rol</label>
+                                                        <input type="text" class="form-control" id="rol" name="rol"
+                                                            placeholder="Tipo de rol">
+                                                    </div>
+                                                    <div class="col">
+                                                        <label for="Nombre">Nombre </label>
+                                                        <input type="text" class="form-control" placeholder="Nombre"
+                                                            name="nombre" di="nombre">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-danger"
+                                                data-dismiss="modal">Cerrar</button>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -228,47 +245,10 @@ while($data=$resultado->fetch_assoc()){
 
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"
-        integrity="sha256-R4pqcOYV8lt7snxMQO/HSbVCFRPMdrhAFMH+vr9giYI=" crossorigin="anonymous"></script>
-    <script>
-    var ctx = document.getElementById('myChart').getContext('2d');
-    var myChart = new Chart(ctx, {
-        type: 'bar',
-        data: {
-            labels: ['Feb 2020', 'Mar 2020', 'Abr 2020', 'May 2020'],
-            datasets: [{
-                label: 'Nuevos usuarios',
-                data: [50, 100, 150, 200],
-                backgroundColor: [
-                    '#12C9E5',
-                    '#12C9E5',
-                    '#12C9E5',
-                    '#111B54'
-                ],
-                maxBarThickness: 30,
-                maxBarLength: 2
-            }]
-        },
-        options: {
-            scales: {
-                yAxes: [{
-                    ticks: {
-                        beginAtZero: true
-                    }
-                }]
-            }
-        }
-    });
-    </script>
 </body>
 
 </html>
+<!-- funciones  -->
+<script
+    src ="js/Funciones.js">
+</script>
