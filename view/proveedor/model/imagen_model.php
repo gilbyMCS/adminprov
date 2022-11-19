@@ -22,8 +22,6 @@ if ($resultado == 1) {
         $ultimo_img=mysqli_insert_id($conexion);
 
         if ($res2==1) {
-            $sql="INSERT INTO info_negocio(id_imagen, name_negocio) VALUES ('$ultimo_img', '$name_negocio')";
-            $res3=mysqli_query($conexion, $sql);
 
             header('Location: ../view/subirImagen.php');
         }
