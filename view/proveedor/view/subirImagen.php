@@ -26,10 +26,6 @@ require_once '../assets/librerias.php';
                                 </div>
                                 <div class="card-body">
                                     <form action="../controller/imagen_controller.php" method="POST" enctype="multipart/form-data">
-                                        <div class="col-4">
-                                            <label>Nombre de la empresa o negocio:</label>
-                                            <input type="text" class="form-control" name="name_negocio">
-                                        </div>
                                         <div class="container">
                                             <div class="row">
                                                 <div class="col-4">

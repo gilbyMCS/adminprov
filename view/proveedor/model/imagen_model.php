@@ -22,6 +22,8 @@ if ($resultado == 1) {
         $ultimo_img=mysqli_insert_id($conexion);
 
         if ($res2==1) {
+            $sql="UPDATE info_negocio SET id_imagen='$ultimo_img' WHERE id_negocio='$ultimo_img'";
+            $res3=mysqli_query($conexion, $sql);
 
             header('Location: ../view/subirImagen.php');
         }
