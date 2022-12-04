@@ -36,12 +36,12 @@ require_once '../assets/librerias.php';
                                             <div class="col-6">
                                                 <h2><?php echo $dataVideo['nombreVideo']; ?></h2>
                                                 <iframe width="253" height="200" src="<?php echo $dataVideo['urlVideo']; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                <a href="deleteVideoYoutube.php?idVideo=<?php echo $dataVideo['id_video']; ?>" class="btn btn-danger btn-block" onclick="return confirm('Estás seguro que deseas eliminar el Video?');">Borrar video</a>
+                                                <a href="actualizarVideo.php?idVideo=<?php echo $dataVideo['id_video']; ?>" class="btn btn-success btn-block" onclick="return confirm('Estás seguro que deseas actualizar el Video?');">Actualizar Video</a>
                                             </div>
                                             <div class="col-6">
                                                 <h2><?php echo $dataVideo['nombreVideo2']; ?></h2>
                                                 <iframe width="253" height="200" src="<?php echo $dataVideo['urlVideo2']; ?>" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                                <a href="deleteVideoYoutube.php?idVideo=<?php echo $dataVideo['id_video']; ?>" class="btn btn-danger btn-block" onclick="return confirm('Estás seguro que deseas eliminar el Video?');">Borrar video</a>
+                                                <a href="actualizarVideo1.php?idVideo1=<?php echo $dataVideo['id_video']; ?>" class="btn btn-success btn-block" onclick="return confirm('Estás seguro que deseas actualizar el Video?');">Actualizar Video</a>
                                             </div>
                                         </div>
                                     </div>
