@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <?php
@@ -22,13 +23,17 @@ require_once '../assets/librerias.php';
                             <div class="card rounded-0">
                                 <div class="container mt-5 pd-5">
                                     <?php
-                                    require_once '../../../assets/conexion.php';
-                                    $conexion = conexion();
-                                    $sqlVideo   = ("SELECT * FROM videos ORDER BY id_video DESC ");
-                                    $queryVideo = mysqli_query($conexion, $sqlVideo);
-                                    $dataVideo = mysqli_fetch_array($queryVideo);
-
-                                    ?><a></a>
+                                    if(isset($_SESSION['usuario'])){
+                                        $conexion  = mysqli_connect("localhost","root","","goolpartie");
+                                        $user=$_SESSION['usuario'];
+                                        $sqlVideo ="SELECT * FROM login_admin INNER JOIN info_negocio ON login_admin.id_login_rol = info_negocio.id_login_rol INNER JOIN
+                                         videos on info_negocio.id_video = videos.id_video 
+                                         WHERE nombre = '$user'";
+                                        $resultado = mysqli_query($conexion, $sqlVideo);
+                                        $dataVideo = mysqli_fetch_array($resultado);
+                                    }
+                                    ?>
+                                    <a></a>
                                     <h2 class="text-center mt-1 mb-3">Mis Videos de Youtube</h2>
                                     <hr>
                                     <div class="container text-center">
