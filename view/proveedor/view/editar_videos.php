@@ -28,7 +28,7 @@ require_once '../assets/librerias.php';
                                     $queryVideo = mysqli_query($conexion, $sqlVideo);
                                     $dataVideo = mysqli_fetch_array($queryVideo);
 
-                                    ?>
+                                    ?><a></a>
                                     <h2 class="text-center mt-1 mb-3">Mis Videos de Youtube</h2>
                                     <hr>
                                     <div class="container text-center">
