@@ -30,5 +30,6 @@
 
     <script src="https://kit.fontawesome.com/2f0e61d379.js" crossorigin="anonymous"></script>
 
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+ 
 </head>
