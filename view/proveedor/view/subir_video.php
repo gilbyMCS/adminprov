@@ -27,7 +27,7 @@ require_once '../assets/librerias.php';
                                     <form action="../controller/recibVideoYoutube.php" method="post">
                                     <h2>Subir primer video</h2>
                                         <div class="form-group">
-                                            <label for="nombreVideo">Nombre del Video</label>
+                                            <label for="nombreVideo">Nombre del Videos</label>
                                             <input type="text" name="nombreVideo" class="form-control">
                                         </div>
                                         <div class="form-group">
