@@ -4,7 +4,7 @@ require_once '../../../assets/conexion.php';
 $conexion=conexion();
 
 $sql="INSERT INTO descripcion_name(descripcion1, descripcion2, descripcion3, descripcion4,descripcion5) VALUES 
-('$descri1', '$descri1', '$descri1', '$descri1', '$descri1')";
+('$descri1', '$descri2', '$descri3', '$descri4', '$descri5')";
 
 $resultado= mysqli_query($conexion, $sql);
 $ultimo_descri=mysqli_insert_id($conexion);
