@@ -12,7 +12,7 @@
         <a href="subirimagen.php" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
             Subir Imagen</a>
 
-        <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
+        <a href="subir_video.php" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
             Subir video</a>
 
             <a href="editar_registro.php" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
@@ -21,7 +21,7 @@
             <a href="editar_imagenes.php" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
             Editar Imagenes</a>
 
-            <a href="#" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
+            <a href="editar_videos.php" class="d-block text-light p-3 border-0"><i class="icon ion-md-people lead mr-2"></i>
             Editar videos</a>
     </div>
 </div>
