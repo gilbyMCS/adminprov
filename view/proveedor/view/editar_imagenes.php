@@ -1,21 +1,37 @@
 <?php
 session_start();
 if(isset($_SESSION['usuario'])){
+    $conexion  = mysqli_connect("localhost","root","","goolpartie");
+    $user=$_SESSION['usuario'];
+    $sql = "SELECT * from login_admin INNER JOIN info_negocio ON login_admin.id_login_rol = info_negocio.id_login_rol INNER JOIN imagenes ON info_negocio.id_imagen = imagenes.id_imagen INNER JOIN nombre_imagen 
+    on imagenes.idName_imagen = nombre_imagen.idName_imagen 
+    WHERE nombre='$user'";
+    $resultado = mysqli_query($conexion, $sql);
+    while($data=$resultado->fetch_assoc()){
+     $nombre_1 =$data['name1'];
+     $nombre_2 =$data['name2'];
+     $nombre_3 =$data['name3'];
+     $nombre_4 =$data['name4'];
+     $nombre_5 =$data['name5'];
+
+     $imagen_1=$data['imagen'];
+     $imagen_2=$data['imagen1'];
+     $imagen_3=$data['imagen2'];
+     $imagen_4=$data['imagen3'];
+     $imagen_5=$data['imagen4'];
+     $idImagen=$data['id_imagen'];
+    }
+
+
 }else{
     header("location:../../../index.php");
 }
 ?>
 <!doctype html>
 <html lang="en">
-
 <?php
 require_once '../assets/librerias.php';
 require_once '../../../assets/conexion.php';
-$conexion = conexion();
-$user=$_SESSION['usuario'];
-$sql = "SELECT * FROM imagenes INNER JOIN nombre_imagen ON imagenes.idName_imagen=nombre_imagen.idName_imagen WHERE id_imagen=1";
-$res = mysqli_query($conexion, $sql);
-$row = $res->fetch_assoc();
 ?>
 <body>
     <div class="d-flex" id="content-wrapper">
@@ -40,32 +56,32 @@ $row = $res->fetch_assoc();
                                     <div class="row">
                                         <div class="col-4">
                                             <div class="container-fluid">
-                                                <h2><?php echo $row['name1']; ?></h2>
+                                                <h2><?php echo $nombre_1 ?></h2>
                                                 <div class="card text-center" style="width:300px">
-                                                    <img class="card-img-top" src="data:img/jpg;base64,<?php echo base64_encode($row['imagen']) ?>" style="width:100%">
+                                                    <img class="card-img-top" src="data:img/jpg;base64,<?php echo base64_encode( $imagen_1) ?>" style="width:100%">
                                                     <div class="card-body">
-                                                        <a href="actualizar_imagen1.php?id=<?php echo $row['id_imagen'];?>" class="btn btn-primary">ACTUALIZAR</a>
+                                                        <a href="actualizar_imagen1.php?id=<?php echo  $idImagen;?>" class="btn btn-primary">ACTUALIZAR</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-4">
                                             <div class="container-fluid">
-                                                <h2><?php echo $row['name2']; ?></h2>
+                                                <h2><?php echo  $nombre_2 ?></h2>
                                                 <div class="card text-center" style="width:300px">
-                                                    <img class="card-img-top" src="data:img/jpg;base64,<?php echo base64_encode($row['imagen1']) ?>" style="width:100%">
+                                                    <img class="card-img-top" src="data:img/jpg;base64,<?php echo base64_encode($imagen_2) ?>" style="width:100%">
                                                     <div class="card-body">
-                                                    <a href="actualizar_imagen2.php?id=<?php echo $row['id_imagen'];?>" class="btn btn-primary">ACTUALIZAR</a>
+                                                    <a href="actualizar_imagen2.php?id=<?php echo  $idImagen; ?>" class="btn btn-primary">ACTUALIZAR</a>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-4">
-                                            <h2><?php echo $row['name3']; ?></h2>
+                                            <h2><?php echo  $nombre_3 ?></h2>
                                             <div class="card text-center" style="width:300px">
-                                                <img class="card-img-top" src="data:img/jpg;base64,<?php echo base64_encode($row['imagen2']) ?>" alt="Card image" style="width:100%">
+                                                <img class="card-img-top" src="data:img/jpg;base64,<?php echo base64_encode($imagen_3) ?>" alt="Card image" style="width:100%">
                                                 <div class="card-body">
-                                                <a href="actualizar_imagen3.php?id=<?php echo $row['id_imagen'];?>" class="btn btn-primary">ACTUALIZAR</a>
+                                                <a href="actualizar_imagen3.php?id=<?php echo  $idImagen; ?>" class="btn btn-primary">ACTUALIZAR</a>
                                                 </div>
                                             </div>
 
@@ -75,21 +91,21 @@ $row = $res->fetch_assoc();
                                 <div class="container" style="text-align: center; display:flex; justify-content:center;">
                                     <div class="row">
                                         <div class="col-6">
-                                            <h2><?php echo $row['name4']; ?></h2>
+                                            <h2><?php echo  $nombre_4 ?></h2>
                                             <div class="card text-center" style="width:300px">
-                                                <img class="card-img-top" src="data:img/jpg;base64,<?php echo base64_encode($row['imagen3']) ?>" style="width:100%">
+                                                <img class="card-img-top" src="data:img/jpg;base64,<?php echo base64_encode($imagen_4) ?>" style="width:100%">
                                                 <div class="card-body">
-                                                <a href="actualizar_imagen4.php?id=<?php echo $row['id_imagen'];?>" class="btn btn-primary">ACTUALIZAR</a>
+                                                <a href="actualizar_imagen4.php?id=<?php echo  $idImagen; ?>" class="btn btn-primary">ACTUALIZAR</a>
                                                 </div>
                                             </div>
 
                                         </div>
                                         <div class="col-6">
-                                            <h2><?php echo $row['name5']; ?></h2>
+                                            <h2><?php echo  $nombre_5 ?></h2>
                                             <div class="card text-center" style="width:300px">
-                                                <img class="card-img-top" src="data:img/jpg;base64,<?php echo base64_encode($row['imagen4']) ?>" alt="Card image" style="width:100%">
+                                                <img class="card-img-top" src="data:img/jpg;base64,<?php echo base64_encode($imagen_5) ?>" alt="Card image" style="width:100%">
                                                 <div class="card-body">
-                                                <a href="actualizar_imagen5.php?id=<?php echo $row['id_imagen'];?>" class="btn btn-primary">ACTUALIZAR</a>
+                                                <a href="actualizar_imagen5.php?id=<?php echo  $idImagen; ?>" class="btn btn-primary">ACTUALIZAR</a>
                                                 </div>
                                             </div>
 

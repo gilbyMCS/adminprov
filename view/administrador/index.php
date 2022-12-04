@@ -15,7 +15,6 @@ while($data=$resultado->fetch_assoc()){
     $contra = $data['contra'];
     $rol_id = $data['rol'];
 }
-
 ?>
 <!doctype html>
 <html lang="en">
