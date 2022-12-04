@@ -28,7 +28,7 @@ require_once '../assets/librerias.php';
                                     <?php
                                     require_once '../../../assets/conexion.php';
                                     $conexion = conexion();
-                                    $sql = "SELECT id_negocio, name_negocio, descripcion, precio, name1, name2, name3, name4, name5, descripcion1, descripcion2, descripcion3, descripcion4, descripcion5 FROM `info_negocio`
+                                    $sql = "SELECT id_negocio, name_negocio, descripcion, precio, name1, name2, name3, name4, name5, descripcion1, descripcion2, descripcion3, descripcion4, descripcion5 FROM info_negocio
                                                 INNER JOIN imagenes ON info_negocio.id_imagen=imagenes.id_imagen
                                                 INNER JOIN nombre_imagen ON imagenes.idName_imagen= nombre_imagen.idName_imagen 
                                                 INNER JOIN descripcion_name ON nombre_imagen.id_descripcion=descripcion_name.id_descripcion WHERE id_negocio=1";
