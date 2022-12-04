@@ -4,7 +4,6 @@ $(document).ready(function(){
     $("#mitabla").load("../view/editar_registro.php");
     $('#btn-agregar').click(function(){
         datos=$('#formulario-ejemplo').serialize();
-
         $.ajax({
             type:"POST",
             data:datos,

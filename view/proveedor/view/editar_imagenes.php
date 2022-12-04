@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['usuario'])){
+}else{
+    header("location:../../../index.php");
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -5,11 +12,11 @@
 require_once '../assets/librerias.php';
 require_once '../../../assets/conexion.php';
 $conexion = conexion();
-$sql = "SELECT * FROM `imagenes` INNER JOIN nombre_imagen ON imagenes.idName_imagen=nombre_imagen.idName_imagen WHERE id_imagen=1";
+$user=$_SESSION['usuario'];
+$sql = "SELECT * FROM imagenes INNER JOIN nombre_imagen ON imagenes.idName_imagen=nombre_imagen.idName_imagen WHERE id_imagen=1";
 $res = mysqli_query($conexion, $sql);
 $row = $res->fetch_assoc();
 ?>
-
 <body>
     <div class="d-flex" id="content-wrapper">
 

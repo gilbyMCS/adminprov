@@ -28,7 +28,7 @@
                                     <a class="dropdown-item" href="#">Mi perfil</a>
                                     <a class="dropdown-item" href="#">Suscripciones</a>
                                     <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Cerrar sesión</a>
+                                    <a class="dropdown-item" href="cerrar.php">Cerrar sesión</a>
                                 </div>
                             </li>
                         </ul>

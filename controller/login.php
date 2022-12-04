@@ -12,6 +12,7 @@ $resultado=mysqli_query($conexion,$consulta);
 $filas=mysqli_fetch_array($resultado);
 
 if($filas['rol_id']==1){ //administrador
+    
     header("location:../view/administrador/index.php");
 
 }else

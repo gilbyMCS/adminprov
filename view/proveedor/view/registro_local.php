@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(isset($_SESSION['usuario'])){
+}else{
+    header("location:../../../index.php");
+}
+?>
 <!doctype html>
 <html lang="en">
 
@@ -22,7 +29,7 @@ require_once '../assets/librerias.php';
                         <div class="col-lg-12 my-3">
                             <div class="card rounded-0">
                                 <div class="card-header bg-success">
-                                    <h6 class="font-weight-bold mb-0 text-center text-white">Subir Imagenes</h6>
+                                    <h6 class="font-weight-bold mb-0 text-center text-white">negocio</h6>
                                 </div>
                                 <div class="card-body">
                                     <form id="formulario-ejemplo">
@@ -45,11 +52,8 @@ require_once '../assets/librerias.php';
                                             </div>
                                         </div>
                                     </form>
-
-
                                     <button type="button" id="btn-agregar" class="btn btn-primary">Registrate :)</button>
                                 </div>
-
                             </div>
                         </div>
                     </div>
