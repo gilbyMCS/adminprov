@@ -123,12 +123,9 @@ while($data=$resultado->fetch_assoc()){
                                                         name="tipo" id="tipo">
                                                 </div>
                                             </div>
-                                            <button type="button" id="btnagregar" class="btn btn-primary">actualizar :)</button>
-                                            <button type="button" class="btn btn-primary" data-toggle="tooltip"
-                                                title="Agregar Registro" id="" >Enviar</button>
-                                            <button type="button" class="btn btn-primary" data-toggle="modal"
-                                                data-target="#myModal" data-toggle="tooltip"
-                                                title="Requisito opcional">Configuar</button>
+                                            <button type="button" id="btnagregar" class="btn btn-primary">Enviar:)</button>
+                                          
+                                            
                                         </form>
                                     </div>
                                 </div>

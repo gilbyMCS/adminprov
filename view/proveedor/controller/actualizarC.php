@@ -4,7 +4,6 @@ $nombre=$_POST['nombre'];
 $descrpcion=$_POST['descripcion'];
 $precio=$_POST['precio'];
 
-
 require_once '../../../assets/conexion.php';
 
 $conexion=conexion();

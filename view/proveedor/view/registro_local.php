@@ -1,9 +1,19 @@
 <?php
 session_start();
 if(isset($_SESSION['usuario'])){
+    $conexion  = mysqli_connect("localhost","root","","goolpartie");
+    echo $user=$_SESSION['usuario'];
+    $sqli = " SELECT * FROM login_admin INNER JOIN info_negocio ON login_admin.id_login_rol = info_negocio.id_negocio WHERE nombre ='$user'";
+    $resultado = mysqli_query($conexion, $sqli);
+     while($data=$resultado->fetch_assoc()){
+        $id_negocio = $data['id_negocio'];
+     }
+
+
 }else{
     header("location:../../../index.php");
 }
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -33,6 +43,7 @@ require_once '../assets/librerias.php';
                                 </div>
                                 <div class="card-body">
                                     <form id="formulario-ejemplo">
+                                    <input type="text" name="id" value="<?php echo     $id_negocio  ?>">
                                         <div class="row">
                                             <div class="col">
                                                 <div class="form-group">

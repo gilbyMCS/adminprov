@@ -121,7 +121,7 @@ while($data=$resultado->fetch_assoc()){
                 <section>
                     <?php require_once 'assets/conexion.php'; 
                     $conexion = conexion();
-                    $sqli ="SELECT * FROM login_admin INNER JOIN roles ON  login_admin.tipo = roles.rol ";
+                    $sqli ="SELECT * FROM login_admin INNER JOIN roles ON login_admin.id_login_rol = roles.rol_id  ";
                     $resul = mysqli_query($conexion, $sqli);
                     ?>
                     <div class="container">
@@ -190,7 +190,7 @@ while($data=$resultado->fetch_assoc()){
                             <div class="col-lg-8 my-3">
                                 <div class="card rounded-0">
                                     <div class="card-header bg-light">
-                                        <h6 class="font-weight-bold mb-0">Número de usuarios de paga</h6>
+                                        <h6 class="font-weight-bold mb-0">Número de usuarios comunes</h6>
                                     </div>
                                     <div class="card-body">
                                         <div class="table-responsive">
