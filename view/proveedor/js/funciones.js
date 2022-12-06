@@ -14,7 +14,7 @@ $(document).ready(function(){
                     alertify.seccess("El registro a sido un exito");
                 }
                 else{
-                    echo ("el registro no se puede completar");
+                    alertify.error("el registro no se puede completar");
                 }   
             }
         });
