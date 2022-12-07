@@ -24,7 +24,7 @@ require_once '../assets/librerias.php';
                                 <div class="container mt-5 pd-5">
                                     <?php
                                     if(isset($_SESSION['usuario'])){
-                                        $conexion  = mysqli_connect("localhost","root","","goolpartie");
+                                        $conexion  = mysqli_connect('localhost','u837896258_golden','C2;yiicUR6','u837896258_golden');
                                         $user=$_SESSION['usuario'];
                                         $sqlVideo ="SELECT * FROM login_admin INNER JOIN info_negocio ON login_admin.id_login_rol = info_negocio.id_login_rol INNER JOIN
                                          videos on info_negocio.id_video = videos.id_video 

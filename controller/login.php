@@ -4,7 +4,7 @@ $contraseña=$_POST['contraseña'];
 session_start();
 $_SESSION['usuario']=$usuario;
 
-$conexion=mysqli_connect("localhost","root","","goolpartie");
+$conexion=mysqli_connect('localhost','u837896258_golden','C2;yiicUR6','u837896258_golden');
 
 $consulta="SELECT*FROM login_admin where nombre='$usuario' and contra='$contraseña'";
 $resultado=mysqli_query($conexion,$consulta);

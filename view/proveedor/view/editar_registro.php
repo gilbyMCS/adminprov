@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['usuario'])) {
-    $conexion  = mysqli_connect("localhost", "root", "", "goolpartie");
+    $conexion  = mysqli_connect('localhost','u837896258_golden','C2;yiicUR6','u837896258_golden');
     $user = $_SESSION['usuario'];
     $sqli = " SELECT * FROM login_admin  
     INNER JOIN info_negocio on login_admin.id_login_rol = info_negocio.id_login_rol INNER JOIN imagenes ON info_negocio.id_imagen=imagenes.id_imagen  INNER JOIN nombre_imagen ON imagenes.idName_imagen= nombre_imagen.idName_imagen  INNER JOIN descripcion_name 

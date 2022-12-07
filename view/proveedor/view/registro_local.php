@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION['usuario'])) {
-    $conexion  = mysqli_connect("localhost", "root", "", "goolpartie");
+    $conexion  = mysqli_connect('localhost','u837896258_golden','C2;yiicUR6','u837896258_golden');
     $user = $_SESSION['usuario'];
     $sqli = " SELECT * FROM login_admin INNER JOIN info_negocio ON login_admin.id_login_rol = info_negocio.id_negocio WHERE nombre ='$user'";
     $resultado = mysqli_query($conexion, $sqli);
